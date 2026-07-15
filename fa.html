@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FA | 黒乃にか</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .fa-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px;
+  }
+  .fa-item{
+    aspect-ratio:1/1;
+    border:3px solid var(--ink);
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:6px 6px 0 rgba(0,0,0,0.08);
+  }
+  .fa-item img{
+    width:100%; height:100%; object-fit:contain; display:block;
+    cursor:zoom-in;
+  }
+  .lightbox{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(36,27,47,0.88);
+    display:none; align-items:center; justify-content:center;
+    padding:32px; cursor:zoom-out;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{
+    max-width:92vw; max-height:88vh;
+    border-radius:16px;
+    box-shadow:0 10px 0 rgba(0,0,0,0.25);
+  }
+  .lightbox-close{
+    position:fixed; top:20px; right:28px;
+    font-family:'Baloo 2'; font-weight:800; font-size:28px;
+    color:var(--paper); background:none; border:none; cursor:pointer;
+    line-height:1;
+  }
+</style>
+</head>
+<body>
+
+<div class="confetti"></div>
+
+<nav class="navbar">
+  <div class="wrap">
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="game.html">Game</a></li>
+      <li><a href="fa.html" class="active">FA</a></li>
+      <li><a href="xkikaku.html">Food</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="page-header">
+    <div class="eyebrow">Fan Art</div>
+    <h1 class="section-title">FA</h1>
+    <p>いただいたり依頼したイラスト</p>
+  </div>
+
+  <section id="fa" style="padding-top:20px;">
+    <div class="fa-grid">
+      <div class="fa-item"><img src="fa-01.jpg" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-02.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-03.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-04.jpg" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-05.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-06.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-07.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-08.jpg" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-09.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-10.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-11.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-12.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-13.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-14.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-15.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-16.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-17.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-18.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-19.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-20.jpg" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-21.jpg" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-22.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+      <div class="fa-item"><img src="fa-23.png" alt="ファンアート" onclick="openLightbox(this.src)"></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="ファンアート 拡大表示">
+</div>
+
+<script>
+  function openLightbox(src){
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeLightbox(); }
+  });
+</script>
+
+<footer>© 2026 黒乃にか — このページはサンプルです</footer>
+
+</body>
+</html>
