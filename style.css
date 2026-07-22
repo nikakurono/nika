@@ -219,6 +219,20 @@ a.sticker:hover{
   background:transparent; color:var(--ink); border:3px solid var(--ink);
 }
 
+.counter-box{
+  display:flex; justify-content:center; align-items:center;
+  padding:20px 0;
+}
+.counter-box span{
+  display:inline-block;
+  border:3px solid var(--ink);
+  border-radius:12px;
+  background:#fff;
+  padding:8px 12px;
+  box-shadow:4px 4px 0 var(--sun);
+  line-height:0;
+}
+
 footer{
   text-align:center; padding:28px 0 40px; font-size:13px; opacity:.5;
 }
