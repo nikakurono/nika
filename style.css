@@ -142,7 +142,7 @@ section{padding:80px 0;}
   display:flex; align-items:center; justify-content:center;
   overflow:hidden;
   transform:rotate(3deg);
-  box-shadow:10px 10px 0 #FFE1EA;
+  box-shadow:10px 10px 0 var(--coral);
   border:3px solid var(--ink);
 }
 .avatar-card img{
@@ -176,9 +176,11 @@ a.sticker:hover{
 #game-list .sticker{transform:none;}
 #game-list .sticker:hover{transform:translateY(-4px) scale(1.05) !important;}
 #about .sticker,
-#likes .sticker{transform:none !important;}
+#likes .sticker,
+#tags .sticker{transform:none !important;}
 #about .sticker:hover,
-#likes .sticker:hover{transform:none !important; box-shadow:none !important; filter:none !important;}
+#likes .sticker:hover,
+#tags .sticker:hover{transform:none !important; box-shadow:none !important; filter:none !important;}
 
 /* ---- works ---- */
 .works{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px;}
